@@ -26,7 +26,7 @@ display_memory_usage() {
 monitor_memory_usage() {
     echo "Monitoring memory usage in real-time. Press [CTRL+C] to stop."
     # Use top command to show memory usage updates every 10 seconds, limit to 10 iterations
-    top -d 2 -n 10 -o %MEM | tee -a "$LOG_FILE"  # Log real-time memory usage to the file
+    top -b -d 10 -o %MEM | tee -a "$LOG_FILE"  # Log real-time memory usage to the file
     
 }
 
